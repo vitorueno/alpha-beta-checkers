@@ -154,7 +154,7 @@ def avaliar(tab, fase=None):
     return valor
 
 def alfa_beta(tab, prof, alfa, beta, maximizando, fase):
-    if prof == 0 or jogo_terminou(tab):
+    if prof == 0 or jogo_terminou(tab): # cutoff search
         return avaliar(tab, fase), tab, None
 
     jogador = 'o' if maximizando else 'x'
